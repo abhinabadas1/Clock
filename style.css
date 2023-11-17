@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&family=Kanit&family=Poppins:wght@500&display=swap');
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+}
+body {
+    background: linear-gradient(to right,black,grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(23, 23, 23, 0.8);
+    border-radius: 50%;
+    border: 5px solid whitesmoke;
+    position: relative;
+}
+.clock .number{
+    --rotation:0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: rgb(159, 158, 158);
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+.clock .number1{ --rotation: 30deg;}
+.clock .number2{ --rotation: 60deg;}
+.clock .number3{ --rotation: 90deg;}
+.clock .number4{ --rotation: 120deg;}
+.clock .number5{ --rotation: 150deg;}
+.clock .number6{ --rotation: 180deg;}
+.clock .number7{ --rotation: 210deg;}
+.clock .number8{ --rotation: 240deg;}
+.clock .number9{ --rotation: 270deg;}
+.clock .number10{ --rotation: 300deg;}
+.clock .number11{ --rotation: 330deg;}
+.clock .number12{ --rotation: 0deg;}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    z-index: 14;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; ;
+    z-index: 10;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+.clock .hand.second{
+    width: 5px;
+    height: 45%;
+    background-color: red;
+}
+.clock .hand.minute{
+    --rotation: 60;
+    width: 10px;
+    height: 38%;
+    background-color: rgba(255, 255, 255, 0.836);
+    z-index: 12;
+}
+.clock .hand.hand.hour{
+    --rotation: 150;
+    width: 15px;
+    height: 30%;
+    background-color: rgba(255,255,255,0.836);
+    z-index: 13;
+}
